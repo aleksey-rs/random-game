@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Game</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="container container--header">
+            <h1>Snake</h1>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container container--main">
+            <div class="wrapper">
+                <canvas id="board"></canvas>
+                <div class="context">Press arrow keys to start Snake</div>
+                <div class="score_wrapper">
+                    <h2>SCORE</h2>
+                    <span class="score">00</span>
+                </div>
+                <div class="actions">
+                    <button class="replay">restart</button>
+                    <button class="pause">pause</button>
+                </div>
+            </div>
+            <div class="description">
+                <div class="desc--text">
+                    The player controls the snake using directional buttons - up, down, left, right. While slithering, the snake must collect food, which earns points. The goal of the game is to accumulate as many points as possible. The game ends, depending on the mode, if the snake crashes into a wall or itself.
+                </div>
+                <div class="setting">
+                    <h2>Selecting the difficulty level of the game:</h2>
+                    <div class="level_options">
+                        <div class="level_wrapper">
+                            <input type="radio" class="level_game" id="level_low" name="level" value="low" checked />
+                            <label for="level_low">Low</label>
+                        </div>
+                        <div class="level_wrapper">
+                            <input type="radio" class="level_game" id="level_hard" name="level" value="hard" />
+                            <label for="level_hard">Hard</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-table">
+                    <h2 class="result-table-title">results table</h2>
+                    <div class="result-content">
+                        <div class="table">
+                            <div class="result_desc">
+                                List of last 10 results 
+                            </div>
+                            <div class="table_header table-row">
+                                <div class="number table-col">Number</div>
+                                <div class="result table-col">Reseult</div>
+                            </div>
+                            <div class="table_body">
+                                <div class="table-row">
+                                    <div class="table-col"></div>
+                                    <div class="table-col"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="empty-result">
+                            No results yet.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close"></span>
+                <img src="./images/game_over.png" class="game_over_image" alt="game over">
+                <h2>final score</h2>
+                <h3 class="final_score">00</h3>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__list">
+                <div class="footer__logo_rs">
+                <a href="https://rs.school/js-stage0/" class="logo_rs">
+                    <img src="./images/rs_school_js.svg" alt="rs-school" class="logo_rs">
+                </a>
+                </div>
+                <div class="footer__year">
+                    <span>2023</span>    
+                </div>
+                <div class="footer__logo_git">
+                <a href="https://github.com/aleksey-rs" class="logo_git">
+                    <img src="./images/git.png" alt="git" class="logo_git">
+                </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
