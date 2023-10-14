@@ -35,6 +35,8 @@ const level_game = document.querySelectorAll(".level_game");
 const modal = document.querySelector('.modal');
 const closeModal = document.querySelector('.close');
 
+const win = new Audio('./sounds/win.mp3');
+const eat = new Audio('./sounds/eat.mp3');
 
 function init() {
     gameOver = false;
@@ -78,6 +80,7 @@ function update() {
 
     if (snakeX == foodX && snakeY == foodY) {
         snakeBody.push([foodX, foodY]);
+        eat.play();
         placeFood();
         point++;
         score.innerHTML = point.toString().padStart(2, "0");
@@ -177,6 +180,7 @@ function disablePause() {
 
 function gameOverExit() {
     gameOver = true;
+    win.play();
     openModal();
     saveResult();
     disablePause();
