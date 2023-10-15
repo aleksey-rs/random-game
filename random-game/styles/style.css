@@ -1,0 +1,350 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;800&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 900;
+	text-transform: uppercase;
+	font-family: 'Poppins', sans-serif;
+	
+}
+
+h1 {
+	text-align: center;
+	padding: 1.5rem 0;
+	color: #fff;
+	font-size: 40px;
+}
+
+h2 {
+	font-size: 25px;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #24282a;
+	color: #fff;
+}
+main {
+	min-height: 80vh;
+}
+.container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header, .footer {
+	padding: 1.5rem 0;
+	background: #2fb5d2;
+}
+
+.footer__list {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	color: #fff;
+}
+
+.footer__list img {
+	width: 5em;
+}
+
+.container--main {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+canvas {
+    border: 1px solid white;
+	background-color: #181825;
+}
+
+.context {
+	font-family: 'Poppins', sans-serif;
+	opacity: 0.4;
+	padding: 15px 0 25px;
+	text-align: center;
+}
+
+.score_wrapper {
+	display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 140px;
+    justify-content: space-around;
+	margin: 0 auto;
+	padding-bottom: 25px;
+}
+
+.description {
+	width: 590px;
+}
+
+.setting {
+	padding-bottom: 25px;
+}
+
+.actions {
+	font-family: 'Poppins', sans-serif;
+	display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.replay, .pause {
+	font-size: 10px;
+	padding: 10px 20px;
+	background: #6e7888;
+	border: none;
+	color: #222738;
+	border-radius: 40px;
+	font-weight: 800;
+	cursor: pointer;
+	transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	text-transform: uppercase;
+}
+
+.replay:hover, .pause:hover {
+	background: #a6aab5;
+	background: #4cffd7;
+	transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pause:disabled { 
+	opacity: 0.4;
+	cursor:not-allowed;
+}
+
+.button:focus {
+	outline: 0;
+}
+
+.score {
+	font-weight: 800;
+}
+
+.modal {
+	display: none; 
+    position: fixed; 
+    z-index: 100; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+  
+.modal-content {
+	background-color: #fefefe;
+	width: 550px; 
+	color: #181825;
+	margin: auto;
+    display: block;
+    max-width: 1200px;
+}
+
+.modal-content {  
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+  
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+  
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    transition: 0.3s;
+    background: no-repeat url("../images/xmark-solid.svg");
+    filter: invert(100%) sepia(0%) saturate(214%) hue-rotate(51deg) brightness(117%) contrast(89%);
+    height: 40px;
+    width: 40px;
+}
+  
+.close:hover,
+.close:focus {
+    filter: invert(37%) sepia(73%) saturate(1241%) hue-rotate(32deg) brightness(92%) contrast(101%);
+    cursor: pointer;
+}
+
+.modal-content h2, .modal-content h3 {
+	text-align: center;
+}
+
+.game_over_image {
+	margin: 0 auto;
+	width: 550px;
+}
+
+.modal-content h2 {
+	font-size: 43px;
+}
+
+.modal-content h3 {
+	padding-bottom: 75px;
+	font-size: 28px;
+}
+
+.desc--text {
+	padding-bottom: 25px;
+	font-size: 18px;
+    text-align: justify;
+}
+
+.level_options {
+    display: flex;
+    align-items: center;
+	gap: 0 25px;
+}
+
+.level_wrapper {
+	font-size: 14px;
+	margin-bottom: 10px;
+	background: #6e7888;
+	border: none;
+	color: #222738;
+	border-radius: 40px;
+	font-weight: 800;
+	cursor: pointer;
+	transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	text-transform: uppercase;
+	display: flex;
+    flex-direction: row;
+	align-items: center;
+    width: 140px;
+    opacity: 0.7;
+}
+
+.level_wrapper:hover {
+	background: #a6aab5;
+	background: #4cffd7;
+	transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+label {
+	width: 100%;
+    height: 100%;
+    padding: 10px 10px;
+	cursor: pointer;
+	display: inline-flex;
+    align-items: center;
+}
+
+.level_game {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 80% 80%;
+}
+
+label:hover::before {
+    border-color: #0a0b0c;
+}
+
+.level_game:not(:disabled):active+label::before {
+    background-color: #b3d7ff;
+    border-color: #b3d7ff;
+}
+
+.level_game:focus+label::before {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.level_game:focus:not(:checked)+label::before {
+    border-color: #80bdff;
+}
+
+.level_game:checked+label::before {
+    border-color: #0b76ef;
+    background-color: #0b76ef;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+
+.table {
+	display: flex;
+    flex-direction: column;
+	font-weight: 800;
+}
+
+.table-row {
+	display: flex;
+    flex-direction: row;
+
+}
+
+.table-col {
+	width: 70px;
+	border: 1px solid #666666;         
+	padding: 5px 20px 5px;
+	text-align: center;
+}
+
+.empty-result {
+	display: none;
+}
+
+.result-table-title {
+	padding-bottom: 5px;
+}
+
+.result_desc {
+	padding-bottom: 15px;
+    font-weight: 800;
+}
