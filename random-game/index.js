@@ -54,7 +54,7 @@ function init() {
 
     placeFood();
     document.addEventListener("keyup", changeDirection);
-    refreshIntervalId = setInterval(update, 1000/10); 
+    refreshIntervalId = setInterval(update, 1000/8); 
     //pause.disabled = true;
     disablePause();
     getResult();
